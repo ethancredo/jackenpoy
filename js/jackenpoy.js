@@ -14,12 +14,12 @@ function playRound(playerSelection, computerSelection) {
     if((playerSelection === "rock" && computerSelection === "Paper") || (playerSelection === "paper" && computerSelection === "Scissors") || 
     (playerSelection === "scissors" && computerSelection === "Rock" ))   {
         computerScore = computerScore + 1;
-        roundResult = "You lost!";
+        roundResult = computerSelection + " beats " + playerSelection + ". You lost!";
         console.log(roundResult);
     } else if ((playerSelection === "scissors" && computerSelection === "Paper") || (playerSelection === "rock" && computerSelection === "Scissors") || 
     (playerSelection === "paper" && computerSelection === "Rock" )) {
         playerScore = playerScore + 1;
-        roundResult = "You win!";
+        roundResult = playerSelection + " beats " + computerSelection + ". You win!";
         console.log(roundResult);
     } else if ((playerSelection === "paper" && computerSelection === "Paper") || (playerSelection === "scissors" && computerSelection === "Scissors") || 
     (playerSelection.toLowerCase() === "rock" && computerSelection === "Rock" )) {
