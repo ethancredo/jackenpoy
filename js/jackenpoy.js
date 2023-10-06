@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let roundResult;
 
 function getComputerChoice(computerChoice) {
     computerChoice = ["Rock", "Paper", "Scissors"];
@@ -40,8 +41,10 @@ function playRound(playerSelection, computerSelection) {
         console.log(roundResult);
 
     } else {
-        console.log("Invalid");
+        roundResult = "Invalid!";
+        console.log(roundResult);
     }
+    // display score every round
     console.log("Player: " + playerScore + " | " + "Computer: " + computerScore);
 }
 
@@ -50,13 +53,18 @@ function game() {
     for(let i = 1; i <= 5; i++) {
         console.log("Round " + i);
         const playerSelection = prompt("Type Rock, Paper, or Scissors to play: ");
-        console.log("You chose: " + playerSelection);
+        console.log("You chose: " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1));
         const computerSelection = getComputerChoice();
         console.log("Computer chose: " + computerSelection);
 
         console.log(playRound(playerSelection, computerSelection));
+
+        if(roundResult == "Invalid!") {
+            i--;
+        }
     }
 
+    // display game result
     if(playerScore > computerScore) {
         console.log("You won the game!");
     } else if(playerScore < computerScore) {
@@ -65,8 +73,5 @@ function game() {
         console.log("The game is a tie!");
     }
 }
-
-
-// console.log(playRound(playerSelection, computerSelection));
 
 console.log(game());
