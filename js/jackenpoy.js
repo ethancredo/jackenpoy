@@ -14,8 +14,9 @@ function playRound(playerSelection, computerSelection) {
 
     playerSelection = playerSelection.toLowerCase();
 
-    if((playerSelection === "rock" && computerSelection === "Paper") || (playerSelection === "paper" && computerSelection === "Scissors") || 
-    (playerSelection === "scissors" && computerSelection === "Rock" ))   {
+    if((playerSelection === "rock" && computerSelection === "Paper") || 
+        (playerSelection === "paper" && computerSelection === "Scissors") || 
+        (playerSelection === "scissors" && computerSelection === "Rock" ))   {
 
         computerScore = computerScore + 1;
 
@@ -24,8 +25,9 @@ function playRound(playerSelection, computerSelection) {
 
         console.log(roundResult);
 
-    } else if ((playerSelection === "scissors" && computerSelection === "Paper") || (playerSelection === "rock" && computerSelection === "Scissors") || 
-    (playerSelection === "paper" && computerSelection === "Rock" )) {
+    } else if ((playerSelection === "scissors" && computerSelection === "Paper") || 
+        (playerSelection === "rock" && computerSelection === "Scissors") || 
+        (playerSelection === "paper" && computerSelection === "Rock" )) {
 
         playerScore = playerScore + 1;
         
@@ -34,8 +36,9 @@ function playRound(playerSelection, computerSelection) {
 
         console.log(roundResult);
 
-    } else if ((playerSelection === "paper" && computerSelection === "Paper") || (playerSelection === "scissors" && computerSelection === "Scissors") || 
-    (playerSelection.toLowerCase() === "rock" && computerSelection === "Rock" )) {
+    } else if ((playerSelection === "paper" && computerSelection === "Paper") || 
+        (playerSelection === "scissors" && computerSelection === "Scissors") || 
+        (playerSelection.toLowerCase() === "rock" && computerSelection === "Rock" )) {
 
         roundResult = "Tie!";
         console.log(roundResult);
