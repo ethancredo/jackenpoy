@@ -14,7 +14,6 @@ paper.addEventListener('click', function() {
 
 let scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', function() {
-    // playerSelection = 'scissors';
     playRound('Scissors');
 });
 
@@ -30,8 +29,8 @@ function playRound(playerSelection, computerSelection) {
 
     playerSelection;
     computerSelection = getComputerChoice();
-    console.log('Player: ' + playerSelection);
-    console.log('Computer: ' + computerSelection);
+
+    let displayRoundResult = document.querySelector('#roundResult');
 
     if((playerSelection === "Rock" && computerSelection === "Paper") || 
         (playerSelection === "Paper" && computerSelection === "Scissors") || 
@@ -39,7 +38,6 @@ function playRound(playerSelection, computerSelection) {
 
         computerScore = computerScore + 1;
 
-        playerSelection = playerSelection;
         roundResult = computerSelection + " beats " + playerSelection + ". You lost!";
 
         console.log(roundResult);
@@ -50,28 +48,41 @@ function playRound(playerSelection, computerSelection) {
 
         playerScore = playerScore + 1;
         
-        playerSelection = playerSelection;
         roundResult = playerSelection + " beats " + computerSelection + ". You win!";
-
-        console.log(roundResult);
 
     } else if ((playerSelection === "Paper" && computerSelection === "Paper") || 
         (playerSelection === "Scissors" && computerSelection === "Scissors") || 
         (playerSelection === "Rock" && computerSelection === "Rock" )) {
 
         roundResult = "Tie!";
-        console.log(roundResult);
 
     } else {
         roundResult = "Invalid!";
-        console.log(roundResult);
     }
+
     // display score every round
-    console.log("Player: " + playerScore + " | " + "Computer: " + computerScore);
+    // let rResult = document.querySelector('#roundResult');
+    // let resultText = "Player: " + playerScore + " | " + "Computer: " + computerScore;
+    // rResult.textContent = resultText;
+
+    
+    displayRoundResult.textContent = roundResult;
+
+    // display player selection on ui
+    let playerPick = document.querySelector('#playerPick');
+    playerPick.textContent = playerSelection;
+
+    // dispaly computer selection on ui
+    let computerPick = document.querySelector('#computerPick');
+    computerPick.textContent = computerSelection;
 
     // display player score on ui
     let pScore = document.querySelector('#playerScore');
-    pScore.append(playerScore);
+    pScore.textContent = playerScore;
+
+    // display computer score on ui
+    let cScore = document.querySelector('#computerScore');
+    cScore.textContent = computerScore;
 }
 
 // function game() {
