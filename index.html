@@ -5,42 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jackenpoy</title>
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
+    <!-- import google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <div class="container">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <header class="header">
+        <h1 class="title">JACKENPOY</h1>
+    </header>
 
-        <div id="results">
-            
+    <main class="main">
+        <div id="scoreboard">
+            <h2 id="roundResult">Choose a Weapon!</h2>
+            <h3 id="roundMessage">Best of five!</h3>
+
+            <div class="scoreContainer">
+                <div class="scoreBox">
+                    <div id="playerPick">🙌</div>
+                    <div id="playerScore">Player: 0</div>
+                </div>
+                <div class="scoreBox">
+                    <div id="computerPick">🙌</div>
+                    <div id="computerScore">Computer: 0</div>
+                </div>
+            </div>
         </div>
-        
-        <table id="jackenpoyBoard">
-            <tr>
-                <td>
-                    Player Selection: <div id="playerPick"></div>
-                </td>
-                <td>
-                    Computer Selection: <div id="computerPick"></div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    Round Result: <div id="roundResult"></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Player Score: <div id="playerScore"></div>
-                </td>
-                <td>
-                    Computer Score: <div id="computerScore"></div>
-                </td>
-            </tr>
-        </table>
-    </div>
+    
+        <div class="jackenpoySelection">
+            <button id="rock">👊</button>
+            <button id="paper">✋</button>
+            <button id="scissors">🤞</button>    
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+    </footer>
 
     <script type="text/javascript" src="js/jackenpoy.js"></script>
 </body>
